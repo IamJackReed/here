@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disclaimer</title>
+
+  <!-- Your consolidated stylesheet -->
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    /* Page-local styling; uses your design tokens when possible */
+    :root { --card-max: 700px; }
+
+    body {
+      line-height: 1.6;
+      display: grid;
+      place-items: start center;
+      min-height: 100svh;
+      padding: 2rem 1rem;
+      background: var(--color-background);
+      color: var(--color-foreground);
+    }
+
+    main {
+      width: min(90vw, var(--card-max));
+      margin-top: 6rem;
+      padding: 1.25rem 1.25rem 1.5rem;
+      background: #1e083c;            /* matches your original */
+      border: 2px solid hotpink;       /* matches your original */
+      border-radius: 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Don’t fight your global * + * rhythm; just tighten inside the card */
+    main * + * { margin-top: 1rem; }
+
+    h1 {
+      color: var(--color-gray-000);
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    p { color: var(--color-gray-000); }
+
+    .button {
+      display: inline-block;
+      text-align: center;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--color-button-bg);
+      color: hotpink;
+      text-decoration: none;
+      border: 2px solid hotpink;
+      border-radius: 0.5rem;
+      font-weight: 900;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .button:hover,
+    .button:focus {
+      background-color: var(--color-button-hover-bg);
+      color: var(--color-button-hover-text);
+      border-color: var(--color-button-hover-border);
+      outline: 0;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.5rem .75rem; }
+      main { margin-top: 2.5rem; padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main role="main" aria-labelledby="disclaimer-title">
+    <h1 id="disclaimer-title">🚦 Disclaimer – Please Read Before You Proceed</h1>
+    <p>Hi there 👋 — and welcome!</p>
+    <p>This site contains personal stories and reflections from my work as a Scrum Master, Agile Coach, and systems thinker. Occasionally, I also write about investing and markets.</p>
+    <p><strong>None of this is financial advice.</strong> It’s for educational and informational purposes only. I’m not FCA‑regulated, and I don’t want to be.</p>
+    <p>Please don’t invest based on anything here without doing your own research. Ideally, consult a qualified financial advisor first.</p>
+    <p>By clicking below, you agree to these terms and understand this site is just a blog — not a tip sheet.</p>
+
+    <a class="button" href="./index.html"
+       onclick="try{localStorage.setItem('disclaimerAccepted','true');}catch(e){}">
+      I Accept – Take Me to the Site
+    </a>
+
+    <noscript>
+      <p class="sr-only">JavaScript is disabled. By using this site you agree to the disclaimer.</p>
+      <p><a class="button" href="./index.html">Continue without saving preference</a></p>
+    </noscript>
+  </main>
+</body>
+</html>
